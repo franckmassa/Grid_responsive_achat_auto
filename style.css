@@ -1,23 +1,25 @@
 /* Setup */
-*, *::before, *::after{
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     /* hérite de html */
     box-sizing: inherit;
 }
-html{
+
+html {
     /* prend en compte le margin et le padding pour le calcul de la largeur et hauteur des éléments */
     box-sizing: border-box;
     /* Pour utiliser rem égale à 10px - pour adapter le zoom */ 
     font-size: 62.5%;
 }
-body{
+
+body {
     font-family: "Lato";
     color: #6d5d4b;
 }
 
 /* Grille du body */
-.container{
+.container {
     display: grid;
     grid-template-columns: 
     minmax(6rem, 1fr)
@@ -26,7 +28,8 @@ body{
     [end]
     minmax(6rem, 1fr);
 }
-.grille{
+
+.grille {
     grid-column: start / end;
     margin: 12rem 0 12rem 0;
     display: grid;
@@ -34,16 +37,68 @@ body{
     grid-gap: 7rem;
 }
 
-.carte{
+.carte {
     background-color: #f9f7f6;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-row-gap: 3.5rem;
     border: 1px solid #000;
 }
-.carteImage{
+
+.carteImage {
     width: 100%;
     grid-row: 1 / 2;
     grid-column: 1 / -1;
     
+}
+
+.name {
+    grid-row: 1 / 2;
+    grid-column: 1 / -1;
+    align-self: end;
+    justify-self: center;
+    z-index: 3;
+    width: 80%;
+    font-family: 'lato'; 
+    font-size: 1.6rem;
+    text-align: center;
+    padding: 1.25rem;
+    background-color: #101d3c;
+    color: #fff;
+    font-weight: 400;
+    transform: translateY(50%);
+}
+
+.location, .cars {
+    margin-top: 2.5rem;
+}
+
+.location, .cars, .details, .prix {
+    font-size: 1.5rem;
+    margin-left: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+i {
+    fill: #c69963;
+    height: 2rem;
+    width: 2rem;
+    margin-right: 1rem;
+}
+
+.btn {
+    grid-column: 1 / -1;
+    background-color: #9e5a63;
+    color: #fff;
+    border: none;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    padding: 1.8rem 3rem;
+    cursor: pointer;
+    transition: all 0.2s linear;
+}
+
+.btn:hover {
+    background-color: #314455;
 }
